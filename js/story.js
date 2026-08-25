@@ -870,14 +870,101 @@ const readPresentationIndex = function readPresentationIndex(value) {
   return Math.min(upper, Math.max(0, Number(value) || 0));
 };
   const setPanZoomVideoTime = function setPanZoomVideoTime(video, value) {
-  if (!video) return;
+  if (!video) return false;
   const next = clampPanZoomVideoTime(video, value);
-  if (Math.abs((Number(video.currentTime) || 0) - next) < 0.015) return;
+  if (Math.abs((Number(video.currentTime) || 0) - next) < 0.015) return false;
   try {
     video.currentTime = next;
+    return true;
   } catch {
     // Metadata may not be ready yet; the caller retries after loadedmetadata.
+    return false;
   }
+};
+  const cancelPanZoomVideoSeek = function cancelPanZoomVideoSeek(video, state) {
+  if (!state) return;
+  if (state.seekedHandler) {
+    video?.removeEventListener?.("seeked", state.seekedHandler);
+  }
+  if (state.seekFrameId !== null) {
+    if (state.seekFrameKind === "video") {
+      video?.cancelVideoFrameCallback?.(state.seekFrameId);
+    } else {
+      video?.ownerDocument?.defaultView?.cancelAnimationFrame?.(
+        state.seekFrameId
+      );
+    }
+  }
+  state.seekTargetTime = null;
+  state.seekInFlight = false;
+  state.seekedHandler = null;
+  state.seekFrameId = null;
+  state.seekFrameKind = null;
+};
+  const requestPanZoomVideoSeek = function requestPanZoomVideoSeek(video, state, value) {
+  if (!video || !state) return;
+  state.seekTargetTime = clampPanZoomVideoTime(video, value);
+  if (state.seekInFlight) return;
+
+  const seekLatest = () => {
+    if (state.seekInFlight || state.seekTargetTime === null) return;
+    const targetTime = state.seekTargetTime;
+    state.seekTargetTime = null;
+    if (Math.abs((Number(video.currentTime) || 0) - targetTime) < 0.015) {
+      return;
+    }
+
+    state.seekInFlight = true;
+    let settled = false;
+    let framePresented =
+      typeof video.requestVideoFrameCallback !== "function";
+    const frameWindow = video.ownerDocument?.defaultView;
+    const presentNext = () => {
+      state.seekFrameId = null;
+      state.seekFrameKind = null;
+      state.seekInFlight = false;
+      seekLatest();
+    };
+    const finishWhenPresented = () => {
+      if (!settled || !framePresented) return;
+      presentNext();
+    };
+    if (!framePresented) {
+      state.seekFrameKind = "video";
+      state.seekFrameId = video.requestVideoFrameCallback(() => {
+        state.seekFrameId = null;
+        state.seekFrameKind = null;
+        framePresented = true;
+        finishWhenPresented();
+      });
+    }
+    const onSeeked = () => {
+      if (settled) return;
+      settled = true;
+      video.removeEventListener?.("seeked", onSeeked);
+      state.seekedHandler = null;
+      if (framePresented && typeof frameWindow?.requestAnimationFrame === "function") {
+        state.seekFrameKind = "animation";
+        state.seekFrameId = frameWindow.requestAnimationFrame(presentNext);
+      } else {
+        finishWhenPresented();
+      }
+    };
+    state.seekedHandler = onSeeked;
+    video.addEventListener?.("seeked", onSeeked, { once: true });
+    if (!setPanZoomVideoTime(video, targetTime)) {
+      video.removeEventListener?.("seeked", onSeeked);
+      if (state.seekFrameId !== null) {
+        video.cancelVideoFrameCallback?.(state.seekFrameId);
+      }
+      state.seekedHandler = null;
+      state.seekFrameId = null;
+      state.seekFrameKind = null;
+      state.seekInFlight = false;
+    }
+  };
+
+  seekLatest();
 };
   const preparePanZoomVideoFrame = function preparePanZoomVideoFrame(video, value, onReady) {
   if (!video) {
@@ -986,7 +1073,12 @@ const readPresentationIndex = function readPresentationIndex(value) {
       animationFrameId: null,
       metadataListenerPending: false,
       readyCallback: null,
-      suspended: false
+      suspended: false,
+      seekTargetTime: null,
+      seekInFlight: false,
+      seekedHandler: null,
+      seekFrameId: null,
+      seekFrameKind: null
     };
   }
   return media.__panZoomVideoState;
@@ -1039,6 +1131,7 @@ const readPresentationIndex = function readPresentationIndex(value) {
   );
   if (transitionPending) {
     cancelPanZoomVideoMonitor(video, state);
+    cancelPanZoomVideoSeek(video, state);
     video?.pause?.();
     state.activeIndex = activeIndex;
     state.sourceUrl = video?.getAttribute?.("src") ?? null;
@@ -1047,6 +1140,7 @@ const readPresentationIndex = function readPresentationIndex(value) {
   }
   if (!video || !activeCue || video.hidden) {
     cancelPanZoomVideoMonitor(video, state);
+    cancelPanZoomVideoSeek(video, state);
     Array.from(media.querySelectorAll?.("[data-pan-zoom-video]") ?? []).forEach(
       (candidate) => candidate.pause?.()
     );
@@ -1056,6 +1150,7 @@ const readPresentationIndex = function readPresentationIndex(value) {
     return;
   }
   if (video.getAttribute?.("src") !== activeCue.url) {
+    cancelPanZoomVideoSeek(video, state);
     video.pause?.();
     video.setAttribute?.("src", activeCue.url);
     video.load?.();
@@ -1070,6 +1165,7 @@ const readPresentationIndex = function readPresentationIndex(value) {
     (sectionBounds.bottom > 0 && sectionBounds.top < viewportHeight);
   if (!sectionIsVisible) {
     cancelPanZoomVideoMonitor(video, state);
+    cancelPanZoomVideoSeek(video, state);
     video.pause?.();
     state.suspended = true;
     return;
@@ -1111,12 +1207,14 @@ const readPresentationIndex = function readPresentationIndex(value) {
     const time =
       fromCue.timeSeconds +
       (toCue.timeSeconds - fromCue.timeSeconds) * progress;
-    runWhenReady(() => setPanZoomVideoTime(video, time));
+    runWhenReady(() => requestPanZoomVideoSeek(video, state, time));
     state.activeIndex = activeIndex;
     state.sourceUrl = activeCue.url;
     state.suspended = false;
     return;
   }
+
+  cancelPanZoomVideoSeek(video, state);
 
   const resuming = state.suspended;
   state.suspended = false;
@@ -2033,7 +2131,7 @@ const readPresentationIndex = function readPresentationIndex(value) {
   media,
   source,
   camera,
-  layerIds = []
+  layerIds = /** @type {string[]} */ ([])
 }) {
   if (!host) return;
   const signature = assetId || (markup ? String(markup).length : "");
@@ -3619,6 +3717,7 @@ const readPresentationIndex = function readPresentationIndex(value) {
   const TIMELINE_DEFAULT_CLIP_DURATION_VH = 80;
   const TIMELINE_MIN_CLIP_DURATION_VH = 10;
   const TIMELINE_DEFAULT_VISUAL_STATE = {"xPercent":0,"yPercent":0,"scale":1,"rotation":0,"opacity":1};
+  const TIMELINE_DEFAULT_SVG_LAYER_DEVICE_STATE = {"visible":true,"opacity":1,"transform":{"xPercent":0,"yPercent":0,"scaleX":1,"scaleY":1,"rotation":0}};
   const timelineFiniteOr = (value, fallback) => {
   const number = Number(value);
   return Number.isFinite(number) ? number : fallback;
@@ -3661,6 +3760,46 @@ const readPresentationIndex = function readPresentationIndex(value) {
     scale: clampTimelineValue(timelineFiniteOr(value?.scale, base.scale), 0.25, 4),
     rotation: clampTimelineValue(timelineFiniteOr(value?.rotation, base.rotation), -360, 360),
     opacity: clampTimelineValue(timelineFiniteOr(value?.opacity, base.opacity), 0, 1)
+  };
+};
+  const normalizeTimelineSvgLayerDeviceState = (value, fallback) => {
+  const base = fallback || TIMELINE_DEFAULT_SVG_LAYER_DEVICE_STATE;
+  const transform = value?.transform || {};
+  const baseTransform = base.transform;
+  return {
+    visible: value?.visible !== false,
+    opacity: clampTimelineValue(
+      timelineFiniteOr(value?.opacity, base.opacity),
+      0,
+      1
+    ),
+    transform: {
+      xPercent: clampTimelineValue(
+        timelineFiniteOr(transform.xPercent, baseTransform.xPercent),
+        -200,
+        200
+      ),
+      yPercent: clampTimelineValue(
+        timelineFiniteOr(transform.yPercent, baseTransform.yPercent),
+        -200,
+        200
+      ),
+      scaleX: clampTimelineValue(
+        timelineFiniteOr(transform.scaleX, baseTransform.scaleX),
+        0.05,
+        6
+      ),
+      scaleY: clampTimelineValue(
+        timelineFiniteOr(transform.scaleY, baseTransform.scaleY),
+        0.05,
+        6
+      ),
+      rotation: clampTimelineValue(
+        timelineFiniteOr(transform.rotation, baseTransform.rotation),
+        -360,
+        360
+      )
+    }
   };
 };
   const normalizeTimelineInterpolation = (value) =>
@@ -3722,13 +3861,64 @@ const readPresentationIndex = function readPresentationIndex(value) {
     ])
   );
 };
-  const resolveTimelineVisualState = (
-  keyframes,
-  positionVh,
-  device = "desktop"
+  const timelineInterpolationAmount = (progress, interpolation) => {
+  const amount = clampTimelineValue(timelineFiniteOr(progress, 0), 0, 1);
+  return interpolation === "hold"
+    ? 0
+    : interpolation === "smooth"
+      ? amount * amount * (3 - 2 * amount)
+      : amount;
+};
+  const interpolateTimelineSvgLayerDeviceState = (
+  from,
+  to,
+  progress,
+  interpolation = "linear"
 ) => {
-  const stateKey = device === "mobile" ? "mobileState" : "desktopState";
-  const ordered = (Array.isArray(keyframes) ? keyframes : [])
+  const start = normalizeTimelineSvgLayerDeviceState(from);
+  const end = normalizeTimelineSvgLayerDeviceState(to, start);
+  const amount = timelineInterpolationAmount(progress, interpolation);
+  const startOpacity = start.visible ? start.opacity : 0;
+  const endOpacity = end.visible ? end.opacity : 0;
+  return {
+    visible:
+      amount <= 0
+        ? start.visible
+        : amount >= 1
+          ? end.visible
+          : start.visible || end.visible,
+    opacity: interpolateNumber(startOpacity, endOpacity, amount),
+    transform: {
+      xPercent: interpolateNumber(
+        start.transform.xPercent,
+        end.transform.xPercent,
+        amount
+      ),
+      yPercent: interpolateNumber(
+        start.transform.yPercent,
+        end.transform.yPercent,
+        amount
+      ),
+      scaleX: interpolateNumber(
+        start.transform.scaleX,
+        end.transform.scaleX,
+        amount
+      ),
+      scaleY: interpolateNumber(
+        start.transform.scaleY,
+        end.transform.scaleY,
+        amount
+      ),
+      rotation: interpolateNumber(
+        start.transform.rotation,
+        end.transform.rotation,
+        amount
+      )
+    }
+  };
+};
+  const orderedTimelineKeyframes = (keyframes) =>
+  (Array.isArray(keyframes) ? keyframes : [])
     .map((keyframe, order) => ({
       ...keyframe,
       positionVh: Math.max(0, timelineFiniteOr(keyframe?.positionVh, 0)),
@@ -3739,6 +3929,13 @@ const readPresentationIndex = function readPresentationIndex(value) {
       (left, right) =>
         left.positionVh - right.positionVh || left.order - right.order
     );
+  const resolveTimelineVisualState = (
+  keyframes,
+  positionVh,
+  device = "desktop"
+) => {
+  const stateKey = device === "mobile" ? "mobileState" : "desktopState";
+  const ordered = orderedTimelineKeyframes(keyframes);
   if (!ordered.length) return { ...TIMELINE_DEFAULT_VISUAL_STATE };
   const position = Math.max(0, timelineFiniteOr(positionVh, 0));
   if (position <= ordered[0].positionVh) {
@@ -3763,6 +3960,64 @@ const readPresentationIndex = function readPresentationIndex(value) {
     left.interpolation
   );
 };
+  const resolveTimelineSvgLayerDeviceState = (
+  keyframes,
+  positionVh,
+  device = "desktop"
+) => {
+  const stateKey = device === "mobile" ? "mobileState" : "desktopState";
+  const ordered = orderedTimelineKeyframes(keyframes);
+  if (!ordered.length) return normalizeTimelineSvgLayerDeviceState();
+  const position = Math.max(0, timelineFiniteOr(positionVh, 0));
+  if (position <= ordered[0].positionVh) {
+    return normalizeTimelineSvgLayerDeviceState(ordered[0][stateKey]);
+  }
+  const last = ordered[ordered.length - 1];
+  if (position >= last.positionVh) {
+    return normalizeTimelineSvgLayerDeviceState(last[stateKey]);
+  }
+  const rightIndex = ordered.findIndex(
+    (keyframe) => keyframe.positionVh > position
+  );
+  const left = ordered[rightIndex - 1];
+  const right = ordered[rightIndex];
+  return interpolateTimelineSvgLayerDeviceState(
+    left[stateKey],
+    right[stateKey],
+    (position - left.positionVh) /
+      Math.max(0.0001, right.positionVh - left.positionVh),
+    left.interpolation
+  );
+};
+  const resolveTimelineSvgLayerStates = (
+  tracks,
+  visualTrackId,
+  positionVh
+) =>
+  Object.fromEntries(
+    (Array.isArray(tracks) ? tracks : [])
+      .filter(
+        (track) =>
+          track?.type === "svg-layer" &&
+          track.visualTrackId === visualTrackId &&
+          typeof track.layerId === "string"
+      )
+      .map((track) => [
+        track.layerId,
+        {
+          desktop: resolveTimelineSvgLayerDeviceState(
+            track.keyframes,
+            positionVh,
+            "desktop"
+          ),
+          mobile: resolveTimelineSvgLayerDeviceState(
+            track.keyframes,
+            positionVh,
+            "mobile"
+          )
+        }
+      ])
+  );
   const isTimelineTrackActive = (track, positionVh, lengthVh) => {
   const range = normalizeTimelineRange(track, lengthVh);
   const position = clampTimelinePosition(positionVh, lengthVh);
@@ -4120,8 +4375,24 @@ const readPresentationIndex = function readPresentationIndex(value) {
               track.__timelineKeyframes = [];
             }
           }
-          const image = track.querySelector("img");
-          if (!active || !image) {
+          if (!track.__timelineSvgLayerTracks) {
+            try {
+              track.__timelineSvgLayerTracks = JSON.parse(
+                track.dataset.svgLayerTracks || "[]"
+              );
+            } catch {
+              track.__timelineSvgLayerTracks = [];
+            }
+          }
+          const desktopImage = track.querySelector("picture img");
+          const mobileRaster = track.querySelector("[data-timeline-mobile-raster]");
+          const image = mobile && mobileRaster ? mobileRaster : desktopImage;
+          const desktopSvg = track.querySelector("[data-timeline-svg-desktop]");
+          const mobileSvg = track.querySelector("[data-timeline-svg-mobile]");
+          const activeSvg = mobile
+            ? mobileSvg || (mobileRaster ? null : desktopSvg)
+            : desktopSvg;
+          if (!active || (!image && !activeSvg)) {
             track.style.opacity = "0";
             track.setAttribute("aria-hidden", "true");
             return;
@@ -4145,24 +4416,79 @@ const readPresentationIndex = function readPresentationIndex(value) {
                 positionVh,
                 mobile ? "mobile" : "desktop"
               );
-          const bounds = track.getBoundingClientRect();
-          const projection = createScrollSequenceVisualProjection({
-            viewportWidth: bounds.width,
-            viewportHeight: bounds.height,
-            mediaWidth: image.naturalWidth || bounds.width,
-            mediaHeight: image.naturalHeight || bounds.height,
-            fit: section.dataset.timelineFit,
-            state
-          });
-          image.style.width = projection.renderedWidth + "px";
-          image.style.height = projection.renderedHeight + "px";
-          image.style.opacity = String(projection.opacity);
-          image.style.transform =
-            "translate3d(-50%, -50%, 0) translate3d(" +
-            projection.translateX + "px," +
-            projection.translateY + "px,0) scale(" +
-            projection.scale + ") rotate(" +
-            projection.rotation + "deg)";
+          if (activeSvg) {
+            if (desktopImage) desktopImage.hidden = true;
+            if (mobileRaster) mobileRaster.hidden = true;
+            [desktopSvg, mobileSvg].filter(Boolean).forEach((host) => {
+              if (!host.__timelineSvgMarkup) {
+                host.__timelineSvgMarkup = host.innerHTML;
+              }
+              host.hidden = host !== activeSvg;
+            });
+            const authoredLayerTracks = track.__timelineSvgLayerTracks || [];
+            const layerTracks = reducedMotion.matches
+              ? authoredLayerTracks.map((layerTrack) => {
+                  const ordered = [...(layerTrack.keyframes || [])]
+                    .sort((left, right) => left.positionVh - right.positionVh);
+                  const reached = ordered.filter(
+                    (keyframe) => keyframe.positionVh <= positionVh
+                  );
+                  return {
+                    ...layerTrack,
+                    keyframes: [reached[reached.length - 1] || ordered[0]].filter(Boolean)
+                  };
+                })
+              : authoredLayerTracks;
+            const layerStates = resolveTimelineSvgLayerStates(
+              layerTracks,
+              track.dataset.trackId,
+              positionVh
+            );
+            syncPanZoomSvgHost({
+              host: activeSvg,
+              markup: activeSvg.__timelineSvgMarkup,
+              assetId: activeSvg.dataset.svgAssetId,
+              media: track,
+              source: {
+                fit: section.dataset.timelineFit,
+                svgLayerStates: layerStates,
+                svgLayerPivots: {},
+                svgLayerParents: { desktop: {}, mobile: {} },
+                svgDevice: mobile ? "mobile" : "desktop"
+              },
+              camera: {
+                xPercent: state.xPercent,
+                yPercent: state.yPercent,
+                zoom: state.scale
+              },
+              layerIds: layerTracks.map((layerTrack) => layerTrack.layerId)
+            });
+            activeSvg.style.opacity = String(state.opacity);
+            activeSvg.style.transform = "rotate(" + state.rotation + "deg)";
+            activeSvg.style.transformOrigin = "50% 50%";
+          } else if (image) {
+            if (desktopImage) desktopImage.hidden = image !== desktopImage;
+            if (mobileRaster) mobileRaster.hidden = image !== mobileRaster;
+            image.hidden = false;
+            const bounds = track.getBoundingClientRect();
+            const projection = createScrollSequenceVisualProjection({
+              viewportWidth: bounds.width,
+              viewportHeight: bounds.height,
+              mediaWidth: image.naturalWidth || bounds.width,
+              mediaHeight: image.naturalHeight || bounds.height,
+              fit: section.dataset.timelineFit,
+              state
+            });
+            image.style.width = projection.renderedWidth + "px";
+            image.style.height = projection.renderedHeight + "px";
+            image.style.opacity = String(projection.opacity);
+            image.style.transform =
+              "translate3d(-50%, -50%, 0) translate3d(" +
+              projection.translateX + "px," +
+              projection.translateY + "px,0) scale(" +
+              projection.scale + ") rotate(" +
+              projection.rotation + "deg)";
+          }
           track.style.opacity = "1";
           track.setAttribute("aria-hidden", "false");
           activeBackground = track.dataset.backgroundColor || activeBackground;
