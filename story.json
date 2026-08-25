@@ -5,7 +5,7 @@
   "slug": "untitled-visual-story",
   "description": "A story created with Scrollstudio.",
   "createdAt": "2026-08-25T08:29:35.901Z",
-  "updatedAt": "2026-08-25T12:16:53.930Z",
+  "updatedAt": "2026-08-25T12:32:06.879Z",
   "theme": {
     "houseStyle": "scrollstudio",
     "background": "#d5c39f",
@@ -2309,7 +2309,7 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
+                          "xPercent": -5.047426489615612,
                           "yPercent": 0,
                           "scale": 1
                         }
@@ -2904,8 +2904,8 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -4.416707225103942,
+                          "yPercent": -1.1327433628318695,
                           "scale": 1
                         }
                       },
@@ -2916,8 +2916,8 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -6.309581750148492,
+                          "yPercent": -0.5663716814159466,
                           "scale": 1
                         }
                       }
@@ -4481,8 +4481,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -5.9939711902455075,
+                          "yPercent": 3.011056222065393,
                           "scale": 1
                         }
                       },
@@ -4493,8 +4493,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -11.98794238049102,
+                          "yPercent": 4.014741629420529,
                           "scale": 1
                         }
                       },
@@ -4505,8 +4505,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -8.202276365599136,
+                          "yPercent": 1.003685407355135,
                           "scale": 1
                         }
                       },
@@ -4517,8 +4517,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -3.4701938469842464,
+                          "yPercent": 0.5018427036775563,
                           "scale": 1
                         }
                       },
@@ -4529,8 +4529,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -2.8392495111689278,
+                          "yPercent": 1.003685407355135,
                           "scale": 1
                         }
                       },
@@ -4541,8 +4541,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -5.3630268544301956,
+                          "yPercent": 0.5018427036775563,
                           "scale": 1
                         }
                       }
@@ -4635,8 +4635,8 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -5.3629446672302725,
+                          "yPercent": -0.6405444627933807,
                           "scale": 1
                         }
                       },
@@ -4647,8 +4647,8 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -2.2082713335654076,
+                          "yPercent": 2.5621778511735,
                           "scale": 1
                         }
                       },
@@ -4659,7 +4659,7 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
+                          "xPercent": -2.839206000298378,
                           "yPercent": 0,
                           "scale": 1
                         }
@@ -4683,7 +4683,7 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
+                          "xPercent": -3.4701406670313517,
                           "yPercent": 0,
                           "scale": 1
                         }
@@ -4695,8 +4695,8 @@
                           "scale": 1
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -2.8392060002983794,
+                          "yPercent": 0.3202722313966789,
                           "scale": 1
                         }
                       }
@@ -6979,7 +6979,7 @@
                 "opacity": 1,
                 "transform": {
                   "xPercent": -22.1,
-                  "yPercent": -28.6,
+                  "yPercent": -33.8,
                   "scaleX": 1.3,
                   "scaleY": 1.3,
                   "rotation": 0
@@ -7332,7 +7332,7 @@
                 "opacity": 1,
                 "transform": {
                   "xPercent": -22.1,
-                  "yPercent": -59.7,
+                  "yPercent": -66.1,
                   "scaleX": 1.3,
                   "scaleY": 1.3,
                   "rotation": 0
@@ -7641,8 +7641,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -2.839240644039048,
+                          "yPercent": -1.0590766175740627,
                           "scale": 1
                         }
                       },
@@ -7653,8 +7653,8 @@
                           "scale": 0.9
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
+                          "xPercent": -2.2082982786970318,
+                          "yPercent": -1.0590766175740627,
                           "scale": 1
                         }
                       }
@@ -7886,9 +7886,9 @@
                           "scale": 0.8
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
-                          "scale": 1
+                          "xPercent": -4.732113460432016,
+                          "yPercent": 2.3492704414058805,
+                          "scale": 0.9
                         }
                       },
                       "svg-text-2": {
@@ -7898,9 +7898,9 @@
                           "scale": 0.8
                         },
                         "mobile": {
-                          "xPercent": 0,
-                          "yPercent": 0,
-                          "scale": 1
+                          "xPercent": -4.416639229736561,
+                          "yPercent": 5.2858584931632695,
+                          "scale": 0.9
                         }
                       }
                     }
@@ -8268,7 +8268,7 @@
                           "content": [
                             {
                               "type": "text",
-                              "text": "SEXUAL FUNCTION/HORMONES"
+                              "text": "SEXUAL FUNCTION/ HORMONES"
                             }
                           ]
                         }
@@ -8291,7 +8291,7 @@
                       },
                       "mobile": {
                         "fontSize": 20,
-                        "alignment": "left",
+                        "alignment": "center",
                         "lineHeight": null
                       }
                     }
@@ -8304,7 +8304,7 @@
               },
               "mobilePlacement": {
                 "xPercent": 50,
-                "widthPx": 340
+                "widthPx": 197
               }
             }
           ],
