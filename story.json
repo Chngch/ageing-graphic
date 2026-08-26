@@ -1,11 +1,11 @@
 {
-  "schemaVersion": 78,
+  "schemaVersion": 79,
   "id": "67bee70c-d2d3-4ea2-8a43-784f0c2b5f9b",
-  "title": "Untitled visual story",
-  "slug": "untitled-visual-story",
-  "description": "A story created with Scrollstudio.",
+  "title": "What happens in our bodies as we age",
+  "slug": "what-happens-in-our-bodies-as-we-age",
+  "description": "Ageing does not suddenly kick in when we turn 65 – it begins at the age of 30. ",
   "createdAt": "2026-08-25T08:29:35.901Z",
-  "updatedAt": "2026-08-25T12:32:06.879Z",
+  "updatedAt": "2026-08-26T08:08:47.257Z",
   "theme": {
     "houseStyle": "scrollstudio",
     "background": "#d5c39f",
@@ -45,50 +45,6 @@
         {
           "id": "youngman",
           "name": "Youngman"
-        }
-      ]
-    },
-    {
-      "id": "86c917b9-f191-404d-a8d3-3cb3cd5b869c",
-      "kind": "image",
-      "originalName": "main_Desktop wide.svg",
-      "fileName": "a014151ae22cf4df.svg",
-      "mimeType": "image/svg+xml",
-      "alt": "",
-      "caption": "",
-      "svgMarkup": "<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1920 1440\">\n  <!-- Generator: Adobe Illustrator 30.7.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 114)  -->\n  <defs>\n    <style>\n      .st0, .st1 {\n        isolation: isolate;\n      }\n\n      .st1 {\n        opacity: .9;\n      }\n    </style>\n  </defs>\n  <image id=\"SKELE\" width=\"756\" height=\"2857\" transform=\"translate(254.4 252) scale(1)\" xlink:href=\"media/svg-raster-8d8f6e8c9d219a27984d.webp\"/>\n  <image id=\"oldwomanBW\" class=\"st0\" width=\"773\" height=\"2800\" transform=\"translate(1026.5015 272.3413) scale(.965)\" xlink:href=\"media/svg-raster-886c4d4378f399b27625.webp\"/>\n  <image id=\"oldmanBW\" class=\"st0\" width=\"758\" height=\"2862\" transform=\"translate(253.5 251.2) scale(1)\" xlink:href=\"media/svg-raster-1dad2e80f81563f247f0.webp\"/>\n  <image id=\"BRAIN\" class=\"st1\" width=\"427\" height=\"394\" transform=\"translate(253.6 216) scale(1)\" xlink:href=\"media/svg-raster-49314bd27f78a88096e1.webp\"/>\n  <image id=\"HEART\" class=\"st0\" width=\"183\" height=\"287\" transform=\"translate(443.9 825) scale(1)\" xlink:href=\"media/svg-raster-d40e131cc4fb183c5cb7.webp\"/>\n  <image id=\"GUTS\" class=\"st0\" width=\"349\" height=\"1025\" transform=\"translate(1250.6668 595.6925) scale(.9634)\" xlink:href=\"media/svg-raster-5bd43b3ddda158e0c48a.webp\"/>\n  <image id=\"LUNGS\" class=\"st0\" width=\"371\" height=\"608\" transform=\"translate(1220.7141 670.4303) scale(.9636)\" xlink:href=\"media/svg-raster-8b59b18a34ab7887cc35.webp\"/>\n  <image id=\"LIVER\" class=\"st0\" width=\"227\" height=\"216\" transform=\"translate(434.2344 1120.3801) scale(.9617)\" xlink:href=\"media/svg-raster-d4bec883eef517fd4bd5.webp\"/>\n</svg>",
-      "svgLayers": [
-        {
-          "id": "SKELE",
-          "name": "SKELE"
-        },
-        {
-          "id": "oldwomanBW",
-          "name": "OldwomanBW"
-        },
-        {
-          "id": "oldmanBW",
-          "name": "OldmanBW"
-        },
-        {
-          "id": "BRAIN",
-          "name": "BRAIN"
-        },
-        {
-          "id": "HEART",
-          "name": "HEART"
-        },
-        {
-          "id": "GUTS",
-          "name": "GUTS"
-        },
-        {
-          "id": "LUNGS",
-          "name": "LUNGS"
-        },
-        {
-          "id": "LIVER",
-          "name": "LIVER"
         }
       ]
     },
@@ -560,6 +516,58 @@
           "textId": "svg-text-2"
         }
       ]
+    },
+    {
+      "id": "30f867b9-5220-419b-bd49-c344b1c80041",
+      "kind": "image",
+      "originalName": "main_Desktop wide with smiling-01.svg",
+      "fileName": "7fe5f79555967035.svg",
+      "mimeType": "image/svg+xml",
+      "alt": "",
+      "caption": "",
+      "svgMarkup": "<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 1920 1440\">\n  <!-- Generator: Adobe Illustrator 30.7.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 114)  -->\n  <defs>\n    <style>\n      .st0, .st1 {\n        isolation: isolate;\n      }\n\n      .st1 {\n        opacity: .9;\n      }\n    </style>\n  </defs>\n  <image id=\"oldwomanSmiling\" width=\"371\" height=\"1344\" transform=\"translate(1027.1409 273.3534) scale(2.0089)\" xlink:href=\"media/svg-raster-ed4a942b47dcc6d74b0d.webp\"/>\n  <image id=\"oldmanSmiling\" width=\"364\" height=\"1374\" transform=\"translate(253.3262 251.2511) scale(2.0829)\" xlink:href=\"media/svg-raster-8e99c745065e545e43aa.webp\"/>\n  <image id=\"SKELE\" class=\"st0\" width=\"762\" height=\"2877\" transform=\"translate(254.4 253.3)\" xlink:href=\"media/svg-raster-ba97fbf93f71a4a4d876.webp\"/>\n  <image id=\"oldwomanBW\" class=\"st0\" width=\"778\" height=\"2816\" transform=\"translate(1026.5017 273.3534) scale(.9588)\" xlink:href=\"media/svg-raster-7ef56d6c7ae56d208113.webp\"/>\n  <image id=\"oldmanBW\" class=\"st0\" width=\"762\" height=\"2877\" transform=\"translate(253.5 251.3)\" xlink:href=\"media/svg-raster-7bbeedebdc6404df2f21.webp\"/>\n  <image id=\"BRAIN\" class=\"st1\" width=\"429\" height=\"396\" transform=\"translate(253.7 216)\" xlink:href=\"media/svg-raster-504e112b216fa5bd9af1.webp\"/>\n  <image id=\"HEART\" class=\"st0\" width=\"184\" height=\"287\" transform=\"translate(443.9 825.8)\" xlink:href=\"media/svg-raster-f5c3ec9d72e00102d822.webp\"/>\n  <image id=\"GUTS\" class=\"st0\" width=\"351\" height=\"1030\" transform=\"translate(1250.6667 596.1111) scale(.9579)\" xlink:href=\"media/svg-raster-ecaaddd8a382a0142063.webp\"/>\n  <image id=\"LUNGS\" class=\"st0\" width=\"373\" height=\"611\" transform=\"translate(1220.7141 670.5633) scale(.9584)\" xlink:href=\"media/svg-raster-b6d323c349603ccee708.webp\"/>\n  <image id=\"LIVER\" class=\"st0\" width=\"228\" height=\"217\" transform=\"translate(434.2588 1120.3801) scale(.9573)\" xlink:href=\"media/svg-raster-afd0810355dc9bc711fe.webp\"/>\n</svg>",
+      "svgLayers": [
+        {
+          "id": "oldwomanSmiling",
+          "name": "OldwomanSmiling"
+        },
+        {
+          "id": "oldmanSmiling",
+          "name": "OldmanSmiling"
+        },
+        {
+          "id": "SKELE",
+          "name": "SKELE"
+        },
+        {
+          "id": "oldwomanBW",
+          "name": "OldwomanBW"
+        },
+        {
+          "id": "oldmanBW",
+          "name": "OldmanBW"
+        },
+        {
+          "id": "BRAIN",
+          "name": "BRAIN"
+        },
+        {
+          "id": "HEART",
+          "name": "HEART"
+        },
+        {
+          "id": "GUTS",
+          "name": "GUTS"
+        },
+        {
+          "id": "LUNGS",
+          "name": "LUNGS"
+        },
+        {
+          "id": "LIVER",
+          "name": "LIVER"
+        }
+      ]
     }
   ],
   "sections": [
@@ -860,7 +868,7 @@
                           "content": [
                             {
                               "type": "text",
-                              "text": "This is the tipping point where tissue breakdown outpaces regeneration, triggering the first grey hairs and fine lines. "
+                              "text": "Ageing does not suddenly kick in when we turn 65 – it begins at the age of 30. "
                             }
                           ]
                         }
@@ -1046,7 +1054,18 @@
       "transitionHoldDistanceVh": 100,
       "transitionMotionDistanceVh": 100,
       "type": "visual-scrolly",
-      "svgLayerPivots": {},
+      "svgLayerPivots": {
+        "oldwomanSmiling": {
+          "desktopPivot": {
+            "xPercent": 50,
+            "yPercent": 50
+          },
+          "mobilePivot": {
+            "xPercent": 50,
+            "yPercent": 50
+          }
+        }
+      },
       "svgLayerParents": {
         "desktop": {
           "LIVER": {
@@ -1450,6 +1469,54 @@
                 "opacity": 0,
                 "transform": {
                   "xPercent": 0,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
                   "yPercent": 0,
                   "scaleX": 1,
                   "scaleY": 1,
@@ -2007,6 +2074,54 @@
                 "opacity": 0,
                 "transform": {
                   "xPercent": 0,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
                   "yPercent": 0,
                   "scaleX": 1,
                   "scaleY": 1,
@@ -2644,6 +2759,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -3215,6 +3378,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -3651,6 +3862,54 @@
                 "opacity": 0,
                 "transform": {
                   "xPercent": 0,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
                   "yPercent": 0,
                   "scaleX": 1,
                   "scaleY": 1,
@@ -4334,6 +4593,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -4906,6 +5213,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -5400,6 +5755,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -5836,6 +6239,54 @@
                 "opacity": 0,
                 "transform": {
                   "xPercent": 0,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
                   "yPercent": 0,
                   "scaleX": 1,
                   "scaleY": 1,
@@ -6311,6 +6762,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -6765,6 +7264,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -7129,6 +7676,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -7476,6 +8071,54 @@
                 "opacity": 1,
                 "transform": {
                   "xPercent": 0,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
                   "yPercent": 0,
                   "scaleX": 1,
                   "scaleY": 1,
@@ -8215,6 +8858,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -8494,6 +9185,54 @@
                 "opacity": 0,
                 "transform": {
                   "xPercent": 0,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
                   "yPercent": 0,
                   "scaleX": 1,
                   "scaleY": 1,
@@ -8825,6 +9564,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 80.5,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -90.9,
+                  "yPercent": 1.9,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -9138,6 +9925,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 79.4,
+                  "yPercent": -8.7,
+                  "scaleX": 0.9,
+                  "scaleY": 0.9,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -38,
+                  "yPercent": 2,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 28.6,
+                  "yPercent": 0,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -9433,6 +10268,54 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 39.7,
+                  "yPercent": -27.7,
+                  "scaleX": 0.7,
+                  "scaleY": 0.7,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 31,
+                  "yPercent": -41,
+                  "scaleX": 0.7,
+                  "scaleY": 0.7,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -41.8,
+                  "yPercent": -26.1,
+                  "scaleX": 0.7,
+                  "scaleY": 0.7,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": false,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -32.5,
+                  "yPercent": -39.5,
+                  "scaleX": 0.7,
+                  "scaleY": 0.7,
+                  "rotation": 0
+                }
+              }
             }
           }
         },
@@ -9540,7 +10423,7 @@
             "oldmanBW": {
               "desktop": {
                 "visible": true,
-                "opacity": 1,
+                "opacity": 0,
                 "transform": {
                   "xPercent": 35.5,
                   "yPercent": -7.5,
@@ -9550,7 +10433,7 @@
                 }
               },
               "mobile": {
-                "visible": true,
+                "visible": false,
                 "opacity": 1,
                 "transform": {
                   "xPercent": 35.5,
@@ -9564,17 +10447,17 @@
             "oldwomanBW": {
               "desktop": {
                 "visible": true,
-                "opacity": 1,
+                "opacity": 0,
                 "transform": {
                   "xPercent": -33.9,
-                  "yPercent": -7.5,
+                  "yPercent": -7.3,
                   "scaleX": 0.9,
                   "scaleY": 0.9,
                   "rotation": 0
                 }
               },
               "mobile": {
-                "visible": true,
+                "visible": false,
                 "opacity": 1,
                 "transform": {
                   "xPercent": -34.2,
@@ -9728,11 +10611,59 @@
                   "rotation": 0
                 }
               }
+            },
+            "oldmanSmiling": {
+              "desktop": {
+                "visible": true,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 35.5,
+                  "yPercent": -7.5,
+                  "scaleX": 0.9,
+                  "scaleY": 0.9,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": true,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": 35.5,
+                  "yPercent": -11.8,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
+            },
+            "oldwomanSmiling": {
+              "desktop": {
+                "visible": true,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -34,
+                  "yPercent": -7.5,
+                  "scaleX": 0.9,
+                  "scaleY": 0.9,
+                  "rotation": 0
+                }
+              },
+              "mobile": {
+                "visible": true,
+                "opacity": 1,
+                "transform": {
+                  "xPercent": -34.2,
+                  "yPercent": -10.5,
+                  "scaleX": 1,
+                  "scaleY": 1,
+                  "rotation": 0
+                }
+              }
             }
           }
         }
       ],
-      "assetId": "86c917b9-f191-404d-a8d3-3cb3cd5b869c"
+      "assetId": "30f867b9-5220-419b-bd49-c344b1c80041"
     },
     {
       "id": "879f66ee-ba63-492d-83d2-c4a381c75361",
