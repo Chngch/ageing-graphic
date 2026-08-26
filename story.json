@@ -5,7 +5,7 @@
   "slug": "what-happens-in-our-bodies-as-we-age",
   "description": "Ageing does not suddenly kick in when we turn 65 – it begins at the age of 30. ",
   "createdAt": "2026-08-25T08:29:35.901Z",
-  "updatedAt": "2026-08-26T08:18:46.832Z",
+  "updatedAt": "2026-08-26T08:23:58.657Z",
   "theme": {
     "houseStyle": "scrollstudio",
     "background": "#d5c39f",
@@ -2147,7 +2147,7 @@
           "transition": {
             "type": "pan-zoom",
             "timing": "automatic",
-            "durationMs": 900,
+            "durationMs": 300,
             "triggerDistanceVh": 0,
             "holdDistanceVh": 100,
             "motionDistanceVh": 100
@@ -2826,7 +2826,7 @@
           "transition": {
             "type": "pan-zoom",
             "timing": "automatic",
-            "durationMs": 900,
+            "durationMs": 300,
             "triggerDistanceVh": 0,
             "holdDistanceVh": 100,
             "motionDistanceVh": 100
@@ -3445,7 +3445,7 @@
           "transition": {
             "type": "pan-zoom",
             "timing": "automatic",
-            "durationMs": 900,
+            "durationMs": 300,
             "triggerDistanceVh": 0,
             "holdDistanceVh": 100,
             "motionDistanceVh": 100
@@ -3935,7 +3935,7 @@
           "transition": {
             "type": "pan-zoom",
             "timing": "automatic",
-            "durationMs": 900,
+            "durationMs": 300,
             "triggerDistanceVh": 0,
             "holdDistanceVh": 100,
             "motionDistanceVh": 100
@@ -6312,7 +6312,7 @@
           "transition": {
             "type": "pan-zoom",
             "timing": "automatic",
-            "durationMs": 900,
+            "durationMs": 300,
             "triggerDistanceVh": 0,
             "holdDistanceVh": 100,
             "motionDistanceVh": 100
