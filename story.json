@@ -5,7 +5,7 @@
   "slug": "what-happens-in-our-bodies-as-we-age",
   "description": "Ageing does not suddenly kick in when we turn 65 – it begins at the age of 30. ",
   "createdAt": "2026-08-25T08:29:35.901Z",
-  "updatedAt": "2026-08-26T08:23:58.657Z",
+  "updatedAt": "2026-08-26T08:32:33.965Z",
   "theme": {
     "houseStyle": "scrollstudio",
     "background": "#d5c39f",
@@ -10285,8 +10285,8 @@
                 "visible": false,
                 "opacity": 1,
                 "transform": {
-                  "xPercent": 31,
-                  "yPercent": -41,
+                  "xPercent": 31.2,
+                  "yPercent": -40.8,
                   "scaleX": 0.7,
                   "scaleY": 0.7,
                   "rotation": 0
@@ -10334,11 +10334,11 @@
           },
           "transition": {
             "type": "pan-zoom",
-            "timing": "automatic",
+            "timing": "scroll-linked",
             "durationMs": 2000,
             "triggerDistanceVh": 0,
             "holdDistanceVh": 100,
-            "motionDistanceVh": 200
+            "motionDistanceVh": 100
           },
           "annotations": [],
           "cards": [
